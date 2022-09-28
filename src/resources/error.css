@@ -1,0 +1,158 @@
+/* Global CSS for error pages */
+
+html {
+    /* Adwaita colors */
+    --bg-color: #f6f5f4;
+    --fg-color: #2e3436;
+    --base-color: #fff;
+    --text-color: #000;
+    --borders: #d3d7cf;
+
+    /* Misc colors */
+    --header-color: #999;
+    --header-text-color: white;
+    --row-hover-color: rgba(0, 0, 0, .1);
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        /* Adwaita colors */
+        --bg-color: #353535;
+        --fg-color: #eeeeec;
+        --base-color: #2d2d2d;
+        --text-color: #fff;
+        --borders: #1b1b1b;
+
+        /* Misc colors */
+        --header-color: #666;
+        --row-hover-color: rgba(255, 255, 255, .1);
+    }
+}
+
+html {
+    font-family: -webkit-system-font, Cantarell, sans-serif;
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    height: 100%;
+}
+
+.error-body {
+    box-sizing:border-box;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width:40em;
+    margin: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    line-height: 1.5;
+    height: 100%;
+}
+
+.error-body .hidden {
+    display: none;
+}
+
+.error-body .visible {
+    display: block;
+}
+
+.error-body .clickable {
+    cursor: pointer;
+    color: #888a85;
+}
+
+.error-body .clickable:hover,
+.error-body .clickable:focus {
+    color: #a6ad9c;
+}
+
+#msg-title {
+    text-align: center;
+    font-size: 24pt;
+    font-weight: 300;
+}
+
+#msg-title.default {
+    color: #2e3436;
+}
+
+#msg-title.danger {
+    color: #cc0000;
+}
+
+#msg-details {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#msg-details div {
+    font-size: 11pt;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#footer {
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+.btn {
+    min-width: 200px;
+    height: 32px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.suggested-action {
+    color: white;
+    border-color: #1b6acb;
+    background-image: linear-gradient(to top, #2379e2 2px, #3584e4);
+}
+
+.suggested-action:hover,
+.suggested-action:focus,
+.suggested-action:active,
+.suggested-action.active {
+    color: white;
+    background-image: linear-gradient(to top, #3584e4, #3987e5 1px);
+}
+
+.destructive-action {
+    color: white;
+    border-color: #b2161d;
+    background-image: linear-gradient(to top, #ce1921 2px, #e01b24);
+}
+
+.destructive-action:hover,
+.destructive-action:focus,
+.destructive-action:active,
+.destructive-action.active {
+    color: white;
+    background-image: linear-gradient(to top, #e01b24, #e41c26 1px);
+}
+
+details > summary::-webkit-details-marker {
+  color: black;
+}

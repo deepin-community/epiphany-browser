@@ -1,0 +1,26 @@
+From: Josselin Mouette <joss@debian.org>
+Date: Fri, 2 Jul 2010 23:20:04 +0000
+Subject: Install as epiphany-browser not epiphany
+
+---
+ meson.build | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+Index: epiphany-3.33.91/meson.build
+===================================================================
+--- epiphany-3.33.91.orig/meson.build
++++ epiphany-3.33.91/meson.build
+@@ -23,9 +23,9 @@ libdir = join_paths(prefix, get_option('
+ libexecdir = join_paths(prefix, get_option('libexecdir'))
+ liblocaledir = join_paths(prefix, libdir, 'locale')
+ localedir = join_paths(prefix, get_option('localedir'))
+-pkgdatadir = join_paths(datadir, 'epiphany')
+-pkglibdir = join_paths(libdir, 'epiphany')
+-pkglibexecdir = join_paths(libexecdir, 'epiphany')
++pkgdatadir = join_paths(datadir, 'epiphany-browser')
++pkglibdir = join_paths(libdir, 'epiphany-browser')
++pkglibexecdir = join_paths(libexecdir, 'epiphany-browser')
+ servicedir = join_paths(datadir, 'dbus-1', 'services')
+ webprocessextensionsdir = join_paths(pkglibdir, 'web-process-extensions')
+ 
+

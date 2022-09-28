@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-Dlibportal=disabled \
+		-Dnetwork_tests=disabled
+
+override_dh_install-arch:
+	dh_install -a
+	cd debian/epiphany-browser/usr/bin \
+		&& mv epiphany-browser.sh epiphany-browser
+
+override_dh_auto_test:
+	xvfb-run -a dh_auto_test
